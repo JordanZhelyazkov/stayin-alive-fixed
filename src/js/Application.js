@@ -1,4 +1,5 @@
 import EventEmitter from "eventemitter3";
+import Beat from "./Beat";
 
 export default class Application extends EventEmitter {
   static get events() {
@@ -6,15 +7,24 @@ export default class Application extends EventEmitter {
       READY: "ready",
     };
   }
+  _beat = new Beat();
+  
+  
 
   constructor() {
     super();
-
-    const button = document.querySelector(".button");
-    button.addEventListener("click", () => {
-      alert("💣");
-    });
-
+    
+    
+  
+    this._beat.emit(Beat.events.BIT);
     this.emit(Application.events.READY);
+    
+
+  }
+  
+  
+
+  _create(){
+    
   }
 }
