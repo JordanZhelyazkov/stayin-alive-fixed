@@ -16,7 +16,7 @@ export default class Application extends EventEmitter {
     
     
   
-    this._beat.emit(Beat.events.BIT);
+    this.emit(Beat.events.BIT);
     this.emit(Application.events.READY);
     
 

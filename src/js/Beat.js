@@ -25,10 +25,10 @@ export default class Beat extends EventEmitter{
         count++
         document.querySelector(".main").appendChild(message);
         
-        
+        this.emit(Beat.events.BIT);
       }, 600);
     
-    this.emit(Beat.events.BIT);
+    
 
   }
   
