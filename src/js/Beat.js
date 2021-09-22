@@ -10,28 +10,10 @@ export default class Beat extends EventEmitter{
   
   constructor(){
     super();
-    const lyrics = ["Ah", "ha", "ha", "ha", "stayin' alive", "stayin' alive"];
-    let count = 0;
-    
-    
-
-      setInterval(() => {
-        const message = document.createElement("div");
-        message.classList.add("message");
-        if(count == lyrics.length){
-          count = 0;
-        }
-        message.innerText = lyrics[count];
-        count++
-        document.querySelector(".main").appendChild(message);
-        
-        this.emit(Beat.events.BIT);
-      }, 600);
-    
-    
-
+    setInterval(() => {
+      console.log('bit');
+      this.emit(Beat.events.BIT);
+    }, 600)
   }
-  
-
   
 }
