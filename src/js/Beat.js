@@ -7,7 +7,6 @@ export default class Beat extends EventEmitter{
     };
   }
   
-  
   constructor(){
     super();
     setInterval(() => {
