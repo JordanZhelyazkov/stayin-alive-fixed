@@ -19,7 +19,7 @@ export default class Application extends EventEmitter {
     let count = 0;
     
     
-    this._beat.addListener('bit', () => {
+    this._beat.addListener(Beat.events.BIT, () => {
       
       const message = document.createElement("div");
       message.classList.add("message");
