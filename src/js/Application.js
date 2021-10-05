@@ -11,6 +11,9 @@ export default class Application extends EventEmitter {
   
   
   
+  
+  
+  
 
   constructor() {
     super();
@@ -19,9 +22,9 @@ export default class Application extends EventEmitter {
     let count = 0;
     
     
-    this._beat.addListener(Beat.events.BIT, () => {
-      
-      const message = document.createElement("div");
+    // this._beat.addListener(Beat.events.BIT, () => {
+      this._beat.on('bit', () => {
+        const message = document.createElement("div");
       message.classList.add("message");
       if(count == lyrics.length){
         count = 0;
@@ -29,9 +32,11 @@ export default class Application extends EventEmitter {
       message.innerText = lyrics[count];
       count++
       document.querySelector(".main").appendChild(message);
+      })
+      
     
       
-    })
+    // })
     
     this.emit(Application.events.READY)
     this.emit(Beat.events.READY);
