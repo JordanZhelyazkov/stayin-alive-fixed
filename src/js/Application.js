@@ -7,7 +7,7 @@ export default class Application extends EventEmitter {
       READY: "ready",
     };
   }
-  _beat = new Beat();
+  beat = new Beat();
   
   
   
@@ -18,7 +18,7 @@ export default class Application extends EventEmitter {
     let count = 0;
    
     // this._beat.addListener('bit', () => {
-    EventEmitter.on(Beat.events.BIT, () => {
+    this.beat.on(Beat.events.BIT, () => {
     const message = document.createElement("div");
     message.classList.add("message");
     if(count == lyrics.length){
